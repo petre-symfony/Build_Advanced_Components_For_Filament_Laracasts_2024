@@ -41,11 +41,9 @@ class TextInput implements Htmlable {
 	}
 
 	public function render(): View{
-		return view('components.text-input', [
-			'label' => $this->getLabel()
-		]);
+		return view('components.text-input', $this->extractPublicMethods());
 	}
-	
+
 	public function toHtml(): string {
 		return $this->render()->render();
 	}
