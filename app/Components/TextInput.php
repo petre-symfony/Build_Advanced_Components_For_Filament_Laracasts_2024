@@ -7,7 +7,7 @@ use Illuminate\Contracts\View\View;
 
 class TextInput implements Htmlable {
 	protected string $label;
-	
+
 	public function __construct(
 		protected string $name,
 
@@ -25,9 +25,13 @@ class TextInput implements Htmlable {
 		return $this;
 	}
 
+	public function getLabel(): string {
+		return $this->label ?? str($this->name)->title();
+	}
+
 	public function render(): View{
 		return view('components.text-input', [
-			'label' => $this->label
+			'label' => $this->getLabel()
 		]);
 	}
 

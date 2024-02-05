@@ -15,8 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/demo', function () {
-	$input = TextInput::make('email')
-		->label('Email Address');
+	$input = TextInput::make('email');
 
 	return view('demo', [
 		'input' => $input
