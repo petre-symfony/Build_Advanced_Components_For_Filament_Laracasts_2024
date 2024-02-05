@@ -1,1 +1,1 @@
-{{ $input->render()->render() }}
+{!! $input->render()->render() !!}
