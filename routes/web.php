@@ -1,5 +1,6 @@
 <?php
 
+use App\Components\TextInput;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/demo', function () {
+	$input = TextInput::make('email');
+
+	return view('demo', [
+		'input' => $input
+	]);
 });
