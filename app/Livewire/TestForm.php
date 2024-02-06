@@ -10,8 +10,8 @@ class TestForm extends Component {
 
 	public function render() {
 		$input = TextInput::make('email')
-			->label(function ($random) {
-				return $random;
+			->label(function ($random, $foo) {
+				return $foo;
 			});
 
 
