@@ -6,7 +6,7 @@ use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\View\View;
 
 class TextInput implements Htmlable {
-	protected string $label;
+	protected string | \Closure $label;
 
 	public function __construct(
 		protected string $name,
@@ -19,14 +19,22 @@ class TextInput implements Htmlable {
 		return new self($name);
 	}
 
-	public function label(string $label): self {
+	public function label(string | \Closure $label ): self {
 		$this->label = $label;
 
 		return $this;
 	}
 
 	public function getLabel(): string {
-		return $this->label ?? str($this->name)->title();
+		return $this->evaluate($this->label ?? null) ?? str($this->name)->title();
+	}
+
+	public function evaluate($value) {
+		if ($value instanceof \Closure) {
+			return $value();
+		}
+
+		return $value;
 	}
 
 	public function extractPublicMethods(): array {

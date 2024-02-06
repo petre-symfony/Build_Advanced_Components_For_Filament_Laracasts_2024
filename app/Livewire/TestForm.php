@@ -10,7 +10,9 @@ class TestForm extends Component {
 
 	public function render() {
 		$input = TextInput::make('email')
-			->label('Email Address');
+			->label(function () {
+				return \Str::random();
+			});
 
 
 		return view('livewire.test-form', [
