@@ -40,6 +40,10 @@ class TextInput implements Htmlable {
 		return $methods;
 	}
 
+	public function getName(): string {
+		return  $this->name;
+	}
+
 	public function render(): View{
 		return view('components.text-input', $this->extractPublicMethods());
 	}
