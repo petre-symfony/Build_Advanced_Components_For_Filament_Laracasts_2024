@@ -31,7 +31,9 @@ class TextInput implements Htmlable {
 
 	public function evaluate($value) {
 		if ($value instanceof \Closure) {
-			return $value();
+			return app()->call($value, [
+				'random' => \Str::random()
+			]);
 		}
 
 		return $value;
