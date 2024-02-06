@@ -4,9 +4,11 @@ namespace App\Components;
 
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\View\View;
+use Livewire\Component;
 
 class TextInput implements Htmlable {
 	protected string | \Closure $label;
+	protected Component $livewire;
 
 	public function __construct(
 		protected string $name,
@@ -33,7 +35,8 @@ class TextInput implements Htmlable {
 		if ($value instanceof \Closure) {
 			return app()->call($value, [
 				'foo' => 'bar',
-				'random' => \Str::random()
+				'random' => \Str::random(),
+				'state' => $this->livewire->{$this->getName()}
 			]);
 		}
 
@@ -53,6 +56,12 @@ class TextInput implements Htmlable {
 
 	public function getName(): string {
 		return  $this->name;
+	}
+
+	public function livewire(Component $livewire): self {
+		$this->livewire = $livewire;
+
+		return $this;
 	}
 
 	public function render(): View{
