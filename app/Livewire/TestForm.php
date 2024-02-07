@@ -9,13 +9,15 @@ class TestForm extends Component {
 	public $email;
 
 	public function render() {
+		TextInput::configureUsing(function ($input) {
+			$input->maxLength(10);
+		});
+
 		$nameInput = TextInput::make('name')
-			->maxLength(10)
 			->livewire($this)
 		;
 
 		$emailInput = TextInput::make('email')
-			->maxLength(10)
 			->livewire($this)
 		;
 
