@@ -4,9 +4,12 @@ namespace App\Components;
 
 use Illuminate\Contracts\Support\Htmlable;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Traits\Macroable;
 use Livewire\Component;
 
 class TextInput implements Htmlable {
+	use Macroable;
+
 	protected string | \Closure $label;
 
 	protected int | \Closure | null $maxLength = null;

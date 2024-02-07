@@ -13,11 +13,16 @@ class TestForm extends Component {
 			$input->maxLength(10);
 		});
 
+		TextInput::macro('foo', fn() => dd('bar'));
+
+
 		$nameInput = TextInput::make('name')
+			->foo()
 			->livewire($this)
 		;
 
 		$emailInput = TextInput::make('email')
+			->foo()
 			->livewire($this)
 		;
 
