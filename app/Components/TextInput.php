@@ -13,6 +13,8 @@ class TextInput implements Htmlable {
 
 	protected Component $livewire;
 
+	protected static array $configurations = [];
+
 	public function __construct(
 		protected string $name,
 
@@ -22,6 +24,10 @@ class TextInput implements Htmlable {
 
 	public static function make(string $name): self {
 		return new self($name);
+	}
+
+	public static function configureUsing(\Closure $configure): void {
+		self::$configurations[] = $configure;
 	}
 
 	public function label(string | \Closure $label ): self {
