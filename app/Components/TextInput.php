@@ -23,7 +23,13 @@ class TextInput implements Htmlable {
 	}
 
 	public static function make(string $name): self {
-		return new self($name);
+		$input =  new self($name);
+
+		foreach (self::$configurations as $configuration){
+			$configuration($input);
+		}
+
+		return $input;
 	}
 
 	public static function configureUsing(\Closure $configure): void {
