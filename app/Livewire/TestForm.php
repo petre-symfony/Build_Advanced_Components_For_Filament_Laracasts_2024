@@ -13,6 +13,7 @@ class TestForm extends Component {
 			->label(function ($random, $foo, $state) {
 				return $state;
 			})
+			->maxLength(10)
 			->livewire($this)
 		;
 
