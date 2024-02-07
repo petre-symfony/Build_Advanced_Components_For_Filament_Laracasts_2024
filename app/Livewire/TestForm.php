@@ -21,6 +21,8 @@ class TestForm extends Component {
 			->livewire($this)
 		;
 
+		TextInput::foo();
+
 		$emailInput = TextInput::make('email')
 			->foo()
 			->livewire($this)
