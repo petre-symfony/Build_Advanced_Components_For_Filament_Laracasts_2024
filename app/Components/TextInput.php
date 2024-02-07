@@ -8,6 +8,9 @@ use Livewire\Component;
 
 class TextInput implements Htmlable {
 	protected string | \Closure $label;
+
+	protected int | \Closure | null $maxLength = null;
+
 	protected Component $livewire;
 
 	public function __construct(
@@ -62,6 +65,16 @@ class TextInput implements Htmlable {
 		$this->livewire = $livewire;
 
 		return $this;
+	}
+
+	public function maxLength(int | \Closure | null $length): self {
+		$this->maxLength = $length;
+
+		return $this;
+	}
+
+	public function getMaxLength(): ?int {
+		return $this->evaluate($this->maxLength);
 	}
 
 	public function render(): View{
