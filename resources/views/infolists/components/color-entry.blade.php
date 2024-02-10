@@ -3,7 +3,12 @@
     @foreach (Illuminate\Support\Arr::wrap($getState())  as $state)
       <div
           x-tooltip.raw="{{ $state }}"
-          class="h-5 w-5 rounded"
+          @class([
+            'rounded',
+            'h-4 w-4' => $getWidth() === 4,
+            'h-5 w-5' => $getWidth() === 5,
+            'h-6 w-6' => $getWidth() === 6
+          ])
           style="background-color: {{ $state }}"
       >
 
