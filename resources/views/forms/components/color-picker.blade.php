@@ -4,6 +4,10 @@
     :component="$getFieldWrapperView()"
     :field="$field"
 >
+  @php
+    $width = $getWidth();
+  @endphp
+  
   <div
       x-data="{ state: $wire.$entangle('{{ $getStatePath() }}') }"
       x-init="
