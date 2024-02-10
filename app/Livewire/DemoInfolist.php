@@ -20,7 +20,7 @@ class DemoInfolist extends Component implements HasForms, HasInfolists {
 				ColorEntry::make('color')
 			])
 			->state([
-				'color' => ['#ff0000', '#00ff00']
+				'color' => '#ff0000'
 			]);
 	}
 
