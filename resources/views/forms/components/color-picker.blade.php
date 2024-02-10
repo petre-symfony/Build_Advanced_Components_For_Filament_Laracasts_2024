@@ -4,7 +4,12 @@
     :component="$getFieldWrapperView()"
     :field="$field"
 >
-  <div x-data="{ state: $wire.$entangle('{{ $getStatePath() }}') }">
+  <div
+      x-data="{ state: $wire.$entangle('{{ $getStatePath() }}') }"
+      x-init="
+        const colorPicker = new iro.ColorPicker($refs.picker)
+      "
+  >
     <div x-ref="picker"></div>
   </div>
 </x-dynamic-component>
