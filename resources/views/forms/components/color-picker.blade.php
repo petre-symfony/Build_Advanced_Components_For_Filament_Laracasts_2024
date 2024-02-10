@@ -3,6 +3,6 @@
     :field="$field"
 >
   <div x-data="{ state: $wire.$entangle('{{ $getStatePath() }}') }">
-    Color
+    <input type="color">
   </div>
 </x-dynamic-component>
