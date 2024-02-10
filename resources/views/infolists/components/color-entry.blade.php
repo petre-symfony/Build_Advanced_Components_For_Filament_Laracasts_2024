@@ -1,6 +1,6 @@
 <x-dynamic-component :component="$getEntryWrapperView()" :entry="$entry">
-  @dd($getState())
-  
+  @dd(Illuminate\Support\Arr::wrap($getState()))
+
   <div
       x-data="{}"
       x-tooltip.raw="{{ $getState() }}"
