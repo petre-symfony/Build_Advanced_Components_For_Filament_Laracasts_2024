@@ -7,7 +7,9 @@
   <div
       x-data="{ state: $wire.$entangle('{{ $getStatePath() }}') }"
       x-init="
-        const colorPicker = new iro.ColorPicker($refs.picker)
+        const colorPicker = new iro.ColorPicker($refs.picker, {
+          color: state
+        })
 
         colorPicker.on('color:change', (color) => {
           state = color.hexString
