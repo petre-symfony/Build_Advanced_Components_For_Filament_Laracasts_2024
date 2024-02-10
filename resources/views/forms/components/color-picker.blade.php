@@ -10,6 +10,9 @@
         const colorPicker = new iro.ColorPicker($refs.picker)
       "
   >
-    <div x-ref="picker"></div>
+    <div
+        wire:ignore
+        x-ref="picker"
+    ></div>
   </div>
 </x-dynamic-component>
