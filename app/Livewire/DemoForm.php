@@ -22,6 +22,7 @@ class DemoForm extends Component implements HasForms {
 		return $form
 			->schema([
 				Section::make('Colors')
+					->description('Pick your own color scheme for the app')
 					->schema([
 						ColorPicker::make('primary')
 							->default('#fbbf24')
