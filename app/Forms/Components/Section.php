@@ -7,7 +7,18 @@ use Filament\Forms\Components\Component;
 class Section extends Component {
 	protected string $view = 'forms.components.section';
 
-	public static function make(): static {
-		return app(static::class);
+	public function __construct(
+		protected string | \Closure $heading
+	) {
+	}
+
+	public function getHeading(): string {
+		return $this->evaluate($this->heading);
+	}
+
+	public static function make(string | \Closure $heading): static {
+		return app(static::class, [
+			'heading' => $heading
+		]);
 	}
 }
