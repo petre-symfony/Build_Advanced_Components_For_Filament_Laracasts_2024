@@ -1,13 +1,13 @@
 <x-dynamic-component :component="$getEntryWrapperView()" :entry="$entry">
-  @foreach (Illuminate\Support\Arr::wrap($getState())  as $state)
-    <div
-        x-data="{}"
-        x-tooltip.raw="{{ $state }}"
-        class="h-5 w-5 rounded"
-        style="background-color: {{ $state }}"
-    >
+  <div x-data="{}">
+    @foreach (Illuminate\Support\Arr::wrap($getState())  as $state)
+      <div
+          x-tooltip.raw="{{ $state }}"
+          class="h-5 w-5 rounded"
+          style="background-color: {{ $state }}"
+      >
 
-    </div>
-  @endforeach
-
+      </div>
+    @endforeach
+  </div>
 </x-dynamic-component>
