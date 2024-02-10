@@ -7,6 +7,7 @@ use Filament\Forms\Components\Component;
 class Section extends Component {
 	protected string $view = 'forms.components.section';
 	protected \Closure|string|null $description = null;
+	protected \Closure|string|null $icon = null;
 
 	public function __construct(
 		protected string | \Closure $heading
@@ -19,8 +20,18 @@ class Section extends Component {
 		return $this;
 	}
 
+	public function icon(string | \Closure | null $icon = null): static {
+		$this->icon = $icon;
+
+		return $this;
+	}
+
 	public function getDescription(): ?string {
 		return $this->evaluate($this->description);
+	}
+
+	public function getIcon(): ?string {
+		return $this->evaluate($this->icon);
 	}
 
 	public function getHeading(): string {
