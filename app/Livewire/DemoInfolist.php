@@ -18,8 +18,9 @@ class DemoInfolist extends Component implements HasForms, HasInfolists {
 		return $infolist
 			->schema([
 				ColorEntry::make('color')
-					->width(function($state) {
-						return 3 or 4 or 5 or 6
+					->width(fn (string $state): int => match($state) {
+						'#ff0000' => 4,
+						'#00ff00' => 6
 					})
 			])
 			->state([

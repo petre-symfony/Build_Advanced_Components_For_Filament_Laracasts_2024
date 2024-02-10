@@ -5,7 +5,7 @@
           x-tooltip.raw="{{ $state }}"
           @class([
             'rounded',
-            match ($getWidth()) {
+            match ($getWidth($state)) {
               4 => 'h-4 w-4',
               5 => 'h-5 w-5',
               default => 'h-6 w-6'

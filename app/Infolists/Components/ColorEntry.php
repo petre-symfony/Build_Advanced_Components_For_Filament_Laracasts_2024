@@ -14,8 +14,10 @@ class ColorEntry extends Entry {
 		return $this;
 	}
 
-	public function getWidth(): ?int {
-		return $this->evaluate($this->width);
+	public function getWidth(string $state): ?int {
+		return $this->evaluate($this->width, [
+			'state' => $state
+		]);
 	}
 
 	protected string $view = 'infolists.components.color-entry';
