@@ -1,5 +1,5 @@
 <x-dynamic-component :component="$getEntryWrapperView()" :entry="$entry">
-  <div x-data="{}">
+  <div x-data="{}" class="flex flex-wrap gap-1">
     @foreach (Illuminate\Support\Arr::wrap($getState())  as $state)
       <div
           x-tooltip.raw="{{ $state }}"
