@@ -2,10 +2,9 @@
 
 namespace App\Livewire;
 
-
+use App\Infolists\Components\ColorEntry;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
-use Filament\Infolists\Components\ColorEntry;
 use Filament\Infolists\Concerns\InteractsWithInfolists;
 use Filament\Infolists\Contracts\HasInfolists;
 use Filament\Infolists\Infolist;
@@ -21,7 +20,7 @@ class DemoInfolist extends Component implements HasForms, HasInfolists {
 				ColorEntry::make('color')
 			])
 			->state([
-				'color' => ['#ff0000', '#00ff00']
+				'color' => '#ff0000'
 			]);
 	}
 

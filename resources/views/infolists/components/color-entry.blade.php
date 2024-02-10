@@ -1,5 +1,7 @@
 <x-dynamic-component :component="$getEntryWrapperView()" :entry="$entry">
-  <div>
-    {{ $getState() }}
+  <div
+      style="background-color: {{ $getState() }}"
+  >
+
   </div>
 </x-dynamic-component>
