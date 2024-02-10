@@ -1,6 +1,10 @@
 <div {{ $attributes }}>
-  {{ $getHeading() }}
-  {{ $getDescription() }}
+  <div>
+    {{ $getHeading() }}
+    {{ $getDescription() }}
+  </div>
 
-  {{ $getChildComponentContainer() }}
+  <div>
+    {{ $getChildComponentContainer() }}
+  </div>
 </div>
