@@ -22,6 +22,9 @@ class DemoForm extends Component implements HasForms {
 			->schema([
 				ColorPicker::make('color1')
 					->default('#ff0000')
+					->width(200),
+				ColorPicker::make('color2')
+					->default('#00ff00')
 					->width(100)
 			])
 			->statePath('data');
