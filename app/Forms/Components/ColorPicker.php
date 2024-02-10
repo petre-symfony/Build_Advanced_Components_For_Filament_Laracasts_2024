@@ -14,7 +14,7 @@ class ColorPicker extends Field {
 		return $this;
 	}
 
-	public function getWidth(): int | \Closure | null {
-
+	public function getWidth(): ?int {
+		return $this->evaluate($this->width);
 	}
 }

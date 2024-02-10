@@ -16,6 +16,7 @@
         })
       "
   >
+    {{ $getWidth() }}
     <div
         wire:ignore
         x-ref="picker"
