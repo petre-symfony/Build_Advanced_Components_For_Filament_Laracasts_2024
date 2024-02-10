@@ -10,7 +10,7 @@
         const colorPicker = new iro.ColorPicker($refs.picker)
 
         colorPicker.on('color:change', (color) => {
-          console.log(color.hexString)
+          state = color.hexString
         })
       "
   >
