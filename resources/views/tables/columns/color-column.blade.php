@@ -10,7 +10,7 @@
       "
   >
     <input
-        x-model="state"
+        x-model.lazy="state"
         type="color"
     >
   </div>
