@@ -3,6 +3,11 @@
       x-data="{
         state: @js($getState())
       }"
+      x-init="
+        $watch('state', () => {
+          console.log(state)
+        })
+      "
   >
     <input
         x-model="state"
