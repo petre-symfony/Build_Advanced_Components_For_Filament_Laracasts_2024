@@ -1,8 +1,12 @@
 <div class="px-4 py-3">
   <div
-      class="h-5 w-5 rounded"
-      style="background-color: {{ $getState() }}"
+      x-data="{
+        state: @js($getState())
+      }"
   >
+    <input
+        x-model="state"
+        type="color"
+    >
   </div>
-
 </div>
