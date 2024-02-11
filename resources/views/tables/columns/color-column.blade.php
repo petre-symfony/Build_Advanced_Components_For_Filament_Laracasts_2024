@@ -5,7 +5,11 @@
       }"
       x-init="
         $watch('state', () => {
-          console.log(state)
+          $wire.updateTableColumnState(
+            @js($getName()),
+            @js($recordKey),
+            state
+          )
         })
       "
   >
