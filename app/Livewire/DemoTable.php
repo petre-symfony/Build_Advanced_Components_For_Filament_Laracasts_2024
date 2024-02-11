@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Tables\Columns\ColorColumn;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
+use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\TextInputColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
@@ -21,7 +22,8 @@ class DemoTable extends Component implements HasForms, HasTable {
 			->query(User::query())
 			->columns([
 				TextInputColumn::make('name'),
-				ColorColumn::make('color')
+				ColorColumn::make('color'),
+				TextColumn::make('email_verified_at')->since()
 			]);
 	}
 
