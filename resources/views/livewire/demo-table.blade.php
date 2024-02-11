@@ -1,3 +1,3 @@
-<div>
-  {{-- To attain knowledge, add things every day; To attain wisdom, subtract things every day. --}}
+<div class="max-w-3xl mx-auto w-full p-8">
+  {{ $this->table }}
 </div>
