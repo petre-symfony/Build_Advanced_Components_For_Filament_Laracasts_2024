@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\User;
 use App\Tables\Columns\ColorColumn;
 use Filament\Forms\Components\DatePicker;
+use Filament\Forms\Components\Fieldset;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Tables\Columns\TextColumn;
@@ -30,8 +31,11 @@ class DemoTable extends Component implements HasForms, HasTable {
 			->filters([
 				Filter::make('email_verified_at')
 					->form([
-						DatePicker::make('from'),
-						DatePicker::make('to')
+						Fieldset::make('email_verified_at')
+							->schema([
+								DatePicker::make('from'),
+								DatePicker::make('to')
+							])
 					])
 			]);
 	}
