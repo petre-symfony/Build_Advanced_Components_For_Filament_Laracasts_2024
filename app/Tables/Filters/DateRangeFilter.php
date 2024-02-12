@@ -11,6 +11,7 @@ class DateRangeFilter extends Filter {
 	protected function setUp(): void {
 		parent::setUp();
 
+		$this->getLabel()
 		$this->form([
 				Fieldset::make('email_verified_at')
 					->schema([
