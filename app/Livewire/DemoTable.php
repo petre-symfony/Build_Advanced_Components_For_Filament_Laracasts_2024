@@ -36,6 +36,7 @@ class DemoTable extends Component implements HasForms, HasTable {
 								DatePicker::make('from'),
 								DatePicker::make('to')
 							])
+							->columns(1)
 					])
 			]);
 	}
