@@ -8,6 +8,8 @@ use Filament\Tables\Filters\Filter;
 use Illuminate\Database\Eloquent\Builder;
 
 class DateRangeFilter extends Filter {
+	protected \Closure|string|null|\DateTimeInterface $maxDate = null;
+
 	protected function setUp(): void {
 		parent::setUp();
 
@@ -32,4 +34,13 @@ class DateRangeFilter extends Filter {
 			});
 	}
 
+	public function maxDate(string | \DateTimeInterface | \Closure | null $date): static {
+		$this->maxDate = $date;
+
+		return $this;
+	}
+
+	public function getMaxDate(): string | \DateTimeInterface | null {
+		return $this->evaluate($this->maxDate);
+	}
 }
