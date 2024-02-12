@@ -28,7 +28,7 @@ class DemoTable extends Component implements HasForms, HasTable {
 			])
 			->filters([
 				DateRangeFilter::make('email_verified_at')
-					->maxDate()
+					->maxDate(now()->addMonth())
 			]);
 	}
 

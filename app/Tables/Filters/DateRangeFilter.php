@@ -16,8 +16,13 @@ class DateRangeFilter extends Filter {
 		$this->form(fn () => [
 				Fieldset::make($this->getLabel())
 					->schema([
-						DatePicker::make('from'),
+						DatePicker::make('from')
+							->native(false)
+							->maxDate($this->getMaxDate())
+						,
 						DatePicker::make('to')
+							->native(false)
+							->maxDate($this->getMaxDate())
 					])
 					->columns(1)
 			])
