@@ -11,9 +11,8 @@ class DateRangeFilter extends Filter {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$this->getLabel()
-		$this->form([
-				Fieldset::make('email_verified_at')
+		$this->form(fn () => [
+				Fieldset::make($this->getLabel())
 					->schema([
 						DatePicker::make('from'),
 						DatePicker::make('to')
@@ -24,11 +23,11 @@ class DateRangeFilter extends Filter {
 				return $query
 					->when(
 						$data['from'] ?? null,
-						fn(Builder $query) => $query->whereDate('email_verified_at', '>=', $data['from'])
+						fn(Builder $query) => $query->whereDate($this->getName(), '>=', $data['from'])
 					)
 					->when(
 						$data['to'] ?? null,
-						fn(Builder $query) => $query->whereDate('email_verified_at', '<=', $data['to'])
+						fn(Builder $query) => $query->whereDate($this->getName(), '<=', $data['to'])
 					);
 			});
 	}
