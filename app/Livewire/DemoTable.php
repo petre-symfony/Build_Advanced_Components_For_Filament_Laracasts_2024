@@ -4,12 +4,14 @@ namespace App\Livewire;
 
 use App\Models\User;
 use App\Tables\Columns\ColorColumn;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Columns\TextInputColumn;
 use Filament\Tables\Concerns\InteractsWithTable;
 use Filament\Tables\Contracts\HasTable;
+use Filament\Tables\Filters\Filter;
 use Filament\Tables\Table;
 use Livewire\Component;
 
@@ -24,6 +26,13 @@ class DemoTable extends Component implements HasForms, HasTable {
 				TextInputColumn::make('name'),
 				ColorColumn::make('color'),
 				TextColumn::make('email_verified_at')->since()
+			])
+			->filters([
+				Filter::make('email_verified_at')
+					->form([
+						DatePicker::make('from'),
+						DatePicker::make('to')
+					])
 			]);
 	}
 
