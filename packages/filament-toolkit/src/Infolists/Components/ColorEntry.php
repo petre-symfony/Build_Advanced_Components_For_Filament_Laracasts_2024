@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Infolists\Components;
+namespace DanHarrin\FilamentToolkit\Infolists\Components;
 
 use Filament\Infolists\Components\Entry;
 
@@ -20,5 +20,5 @@ class ColorEntry extends Entry {
 		]);
 	}
 
-	protected string $view = 'infolists.components.color-entry';
+	protected string $view = 'filament-toolkit::infolists.components.color-entry';
 }
