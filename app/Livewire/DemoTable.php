@@ -3,8 +3,8 @@
 namespace App\Livewire;
 
 use App\Models\User;
-use App\Tables\Columns\ColorColumn;
-use App\Tables\Filters\DateRangeFilter;
+use DanHarrin\FilamentToolkit\Tables\Columns\ColorColumn;
+use DanHarrin\FilamentToolkit\Tables\Filters\DateRangeFilter;
 use Filament\Forms\Concerns\InteractsWithForms;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Tables\Columns\TextColumn;
