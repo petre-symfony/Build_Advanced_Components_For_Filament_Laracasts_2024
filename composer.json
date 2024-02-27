@@ -15,7 +15,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "livewire/livewire": "^3.4"
+        "livewire/livewire": "^3.4",
+        "danharrin/filament-toolkit": "*"
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
@@ -68,6 +69,12 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "repositories": [
+        {
+            "type": "path",
+            "url": "packages/filament-toolkit"
+        }
+    ]
 }

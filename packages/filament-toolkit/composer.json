@@ -16,5 +16,12 @@
   "minimum-stability": "dev",
   "require": {
     "filament/support": "^3.0"
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "DanHarrin\\FilamentToolkit\\FilamentToolkitServiceProvider"
+      ]
+    }
   }
 }

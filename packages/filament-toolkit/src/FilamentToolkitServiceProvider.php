@@ -8,6 +8,8 @@ use Spatie\LaravelPackageTools\PackageServiceProvider;
 class FilamentToolkitServiceProvider extends PackageServiceProvider {
 
 	public function configurePackage(Package $package): void {
-		// TODO: Implement configurePackage() method.
+		$package
+			->name('filament-toolkit')
+			->hasViews();
 	}
 }
