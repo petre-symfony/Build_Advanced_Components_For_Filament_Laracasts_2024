@@ -5,7 +5,7 @@ namespace DanHarrin\FilamentToolkit\Forms\Components;
 use Filament\Forms\Components\Field;
 
 class ColorPicker extends Field {
-	protected string $view = 'forms.components.color-picker';
+	protected string $view = 'filament-toolkit::forms.components.color-picker';
 	protected \Closure|int|null $width = null;
 
 	public function width(int | \Closure | null $width): static {
