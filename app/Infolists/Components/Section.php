@@ -2,7 +2,7 @@
 
 namespace App\Infolists\Components;
 
-use App\Concerns\CanBeSection;
+use DanHarrin\FilamentToolkit\Concerns\CanBeSection;
 use Filament\Infolists\Components\Component;
 
 class Section extends Component {

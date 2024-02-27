@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Forms\Components;
+namespace DanHarrin\FilamentToolkit\Forms\Components;
 
-use App\Concerns\CanBeSection;
+use DanHarrin\FilamentToolkit\Concerns\CanBeSection;
 use Filament\Forms\Components\Component;
 
 class Section extends Component {
