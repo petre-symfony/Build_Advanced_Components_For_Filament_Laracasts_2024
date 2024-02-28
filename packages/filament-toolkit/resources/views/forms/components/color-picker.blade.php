@@ -1,3 +1,4 @@
+@php use Filament\Support\Facades\FilamentAsset; @endphp
 <x-dynamic-component
     :component="$getFieldWrapperView()"
     :field="$field"
@@ -8,7 +9,7 @@
 
   <div
       ax-load,
-      ax-load-src="components/my-component.js",
+      ax-load-src="{{ FilamentAsset::getAlpineComponentSrc() }}",
       x-ignore,
       x-data="colorPicker({ state: $wire.$entangle('{{ $getStatePath() }}'), width: @js($width) })"
   >
