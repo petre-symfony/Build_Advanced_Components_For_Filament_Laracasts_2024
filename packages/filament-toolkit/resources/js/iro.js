@@ -1,11 +1,13 @@
 import iro from '@jaames/iro'
 
-export default function myComponent(message) {
+export default function colorPicker({
+  state, width
+}) {
   return {
-    message: message,
+    state,
 
     init(){
-      console.log('You said', message)
+
     }
   }
 }
