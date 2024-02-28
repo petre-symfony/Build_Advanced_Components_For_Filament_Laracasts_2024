@@ -1,3 +1,11 @@
 import iro from '@jaames/iro'
 
-window.iro = iro
+export default function myComponent(message) {
+  return {
+    message: message,
+
+    init(){
+      console.log('You said', message)
+    }
+  }
+}
