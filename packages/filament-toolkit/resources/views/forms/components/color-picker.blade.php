@@ -7,6 +7,9 @@
   @endphp
 
   <div
+      ax-load,
+      ax-load-src="components/my-component.js",
+      x-ignore,
       x-data="colorPicker({ state: $wire.$entangle('{{ $getStatePath() }}'), width: @js($width) })"
   >
     {{ $getWidth() }}
