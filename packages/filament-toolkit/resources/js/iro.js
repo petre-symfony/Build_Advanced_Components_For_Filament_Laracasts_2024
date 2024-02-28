@@ -7,15 +7,13 @@ export default function colorPicker({
     state,
 
     init(){
-      const colorPicker = new iro.ColorPicker($refs.picker, {
-        @if ($width)
-        width: @js($width),
-        @endif
-        color: state
+      const colorPicker = new iro.ColorPicker(this.$refs.picker, {
+        ...(width ? { width } : {}),
+        color: this.state
       })
 
       colorPicker.on('color:change', (color) => {
-        state = color.hexString
+        this.state = color.hexString
       })
     }
   }

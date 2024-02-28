@@ -7,7 +7,7 @@
   @endphp
 
   <div
-      x-data="{ state: $wire.$entangle('{{ $getStatePath() }}') }"
+      x-data="colorPicker({ state: $wire.$entangle('{{ $getStatePath() }}'), width: @js($width) })"
   >
     {{ $getWidth() }}
     <div
