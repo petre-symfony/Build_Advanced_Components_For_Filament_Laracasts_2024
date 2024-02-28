@@ -8,9 +8,9 @@
   @endphp
 
   <div
-      ax-load,
-      ax-load-src="{{ FilamentAsset::getAlpineComponentSrc() }}",
-      x-ignore,
+      ax-load
+      ax-load-src="{{ FilamentAsset::getAlpineComponentSrc('color-picker', 'danharrin/filament-toolkit') }}"
+      x-ignore
       x-data="colorPicker({ state: $wire.$entangle('{{ $getStatePath() }}'), width: @js($width) })"
   >
     {{ $getWidth() }}
