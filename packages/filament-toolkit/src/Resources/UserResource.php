@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources;
+namespace DanHarrin\FilamentToolkit\Resources;
 
 use App\Filament\Resources\UserResource\Pages;
 use App\Filament\Resources\UserResource\RelationManagers;
@@ -10,8 +10,6 @@ use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class UserResource extends Resource {
 	protected static ?string $model = User::class;
@@ -65,7 +63,7 @@ class UserResource extends Resource {
 
 	public static function getPages(): array {
 		return [
-			'index' => Pages\ManageUsers::route('/'),
+			'index' => \DanHarrin\FilamentToolkit\Resources\UserResource\Pages\ManageUsers::route('/'),
 		];
 	}
 }
