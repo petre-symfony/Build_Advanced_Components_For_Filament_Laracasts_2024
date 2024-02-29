@@ -22,7 +22,7 @@ class Toolkit implements Plugin {
 	public function hasEmailVerifiedAt(): bool {
 		return $this->hasEmailVerifiedAt;
 	}
-	
+
 	public function getId(): string {
 		return 'danharrin-toolkit';
 	}

@@ -37,7 +37,8 @@ class UserResource extends Resource {
 					->searchable(),
 				Tables\Columns\TextColumn::make('email_verified_at')
 					->dateTime()
-					->sortable(),
+					->sortable()
+					->visible(filament('danharrin-toolkit')->hasEmailVerifiedAt()),
 				Tables\Columns\TextColumn::make('created_at')
 					->dateTime()
 					->sortable()
