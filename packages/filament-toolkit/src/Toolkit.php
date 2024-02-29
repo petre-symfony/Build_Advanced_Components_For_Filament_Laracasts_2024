@@ -18,6 +18,8 @@ class Toolkit implements Plugin {
 	}
 
 	public function boot(Panel $panel): void {
-		// TODO: Implement boot() method.
+		$panel->colors([
+			'primary' => auth()->user()->color
+		]);
 	}
 }
