@@ -7,6 +7,10 @@ use Filament\Contracts\Plugin;
 use Filament\Panel;
 
 class Toolkit implements Plugin {
+	public static function make(): Toolkit {
+		return new Toolkit();
+	}
+
 	public function getId(): string {
 		return 'danharrin-toolkit';
 	}
@@ -18,8 +22,6 @@ class Toolkit implements Plugin {
 	}
 
 	public function boot(Panel $panel): void {
-		$panel->colors([
-			'primary' => auth()->user()->color
-		]);
+		//
 	}
 }
