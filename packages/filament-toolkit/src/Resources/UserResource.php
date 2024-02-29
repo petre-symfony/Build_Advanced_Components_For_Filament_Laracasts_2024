@@ -2,8 +2,8 @@
 
 namespace DanHarrin\FilamentToolkit\Resources;
 
-use App\Filament\Resources\UserResource\Pages;
-use App\Filament\Resources\UserResource\RelationManagers;
+use DanHarrin\FilamentToolkit\Resources\UserResource\Pages;
+use DanHarrin\FilamentToolkit\Resources\UserResource\RelationManagers;
 use App\Models\User;
 use Filament\Forms;
 use Filament\Forms\Form;
