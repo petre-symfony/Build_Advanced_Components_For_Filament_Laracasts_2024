@@ -3,6 +3,7 @@
 namespace App\Providers\Filament;
 
 use DanHarrin\FilamentToolkit\Resources\UserResource;
+use DanHarrin\FilamentToolkit\Toolkit;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\DisableBladeIconComponents;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
@@ -32,9 +33,7 @@ class AdminPanelProvider extends PanelProvider
                 'primary' => Color::Amber,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
-						->resources([
-							UserResource::class
-						])
+						->plugin(new Toolkit())
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
                 Pages\Dashboard::class,
