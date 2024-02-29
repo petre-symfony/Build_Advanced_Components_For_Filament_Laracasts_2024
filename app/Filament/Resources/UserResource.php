@@ -21,14 +21,33 @@ class UserResource extends Resource {
 	public static function form(Form $form): Form {
 		return $form
 			->schema([
-				//
+				Forms\Components\TextInput::make('name')
+					->required(),
+				Forms\Components\TextInput::make('email')
+					->email()
+					->required(),
+				Forms\Components\DateTimePicker::make('email_verified_at'),
 			]);
 	}
 
 	public static function table(Table $table): Table {
 		return $table
 			->columns([
-				//
+				Tables\Columns\TextColumn::make('name')
+					->searchable(),
+				Tables\Columns\TextColumn::make('email')
+					->searchable(),
+				Tables\Columns\TextColumn::make('email_verified_at')
+					->dateTime()
+					->sortable(),
+				Tables\Columns\TextColumn::make('created_at')
+					->dateTime()
+					->sortable()
+					->toggleable(isToggledHiddenByDefault: true),
+				Tables\Columns\TextColumn::make('updated_at')
+					->dateTime()
+					->sortable()
+					->toggleable(isToggledHiddenByDefault: true),
 			])
 			->filters([
 				//
